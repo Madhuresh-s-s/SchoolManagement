@@ -8,6 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the School Management API!");
+});
+
 app.post('/addschool', async (req, res)=>{
     try{
         const {name, address, latitude, longitude} = req.body;
